@@ -5,4 +5,4 @@ Given a set of test and equipment parameters, this generates a sky survey - an o
 
 Here’s a high-level view of the function:
 
-![Sky survey overview](images/sky-survey-overview.svg)
+![Sky survey overview](images/Sky-Survey-Overview.svg)
