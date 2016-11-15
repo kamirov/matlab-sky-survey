@@ -5,4 +5,4 @@ Given a set of test and equipment parameters, this generates a sky survey - an o
 
 Here’s a high-level view of the function:
 
-![Sky survey overview](images/Sky-Survey-Overview.svg)
+![Sky survey overview](https://raw.githubusercontent.com/kamirov/matlab-sky-survey/master/images/Sky-Survey-Overview.svg)
