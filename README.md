@@ -96,3 +96,33 @@ We remove points outside of the ROI by calculating the elevation of each point o
 <div align='center'>
     <img src='images/uniform-dist-roi.png' width="400">
 </div>
+
+## Trajectory Generation
+
+Images closer to the zenith are assumed to experience less atmospheric distortion, so we prefer to view points in the ROI when they are at their highest elevation. However, simply planning to view each point when it is at its apex is unfeasible, since many points reach their apex at the same time (end or start of the test usually). This can be seen in the sample elevation trajectories for the 7 points below:
+
+<div align='center'>
+    <img src='images/el-traj.png'>
+</div>
+
+Note, this trajectory is not related to the ROI shown above. That has 63 points, which would lead to a very crowded elevation trajectory chart.
+
+Instead, we generate a uniform time distribution over the test such that we visit each point in the ROI for the same amount of time. We then order the points in decreasing order of peak elevation and assign each point to the nearest, unused time in the distribution. The result of this is an elevation trajectory, albeit with some points below the minimum elevation.
+
+<div align='center'>
+    <img src='images/el-traj-pass-1.png'>
+</div>
+
+Note, the red points indicate when we image a given point. Since we point our mount to a given set of equatorial coordinates, between subsequent points we follow the elevation trajectory of the latest point we imaged.
+
+We then remove any points that are below the minimum elevation from our trajectory:
+
+<div align='center'>
+    <img src='images/el-traj-below-min-removed.png'>
+</div>
+
+This results in some points being thrown out (typically these points exist at the edge of our ROI). There is a setting in the `tuning` structure called `prioritize_high_elevations` which, if set to false, will attempt to swap around points in order to image those points that fall below the minimum elevation. While this results in more imaged points, it lowers the mean elevation at which we image points.
+
+## Trajectory Optimization
+
+Coming soon...
