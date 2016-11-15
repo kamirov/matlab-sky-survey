@@ -7,5 +7,6 @@ A trajectory is a set of timestamped coordinates. In the equatorial coordinate s
 
 Here’s a high-level view of the function:
 
-![Sky survey overview](images/sky-survey-overview.png)
-
+<div style="text-align: center;">
+    <img src="images/sky-survey-overview.svg">
+</div>
