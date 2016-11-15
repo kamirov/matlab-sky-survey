@@ -52,7 +52,7 @@ We begin by dividing the celestial sphere into two half-hemispheres, one represe
 For example:
 
 <div align='center'>
-    <img src='images/alt-az.png'>
+    <img src='images/altaz.png'>
 </div>
 
 ### Right Ascension – Declination
@@ -188,7 +188,9 @@ After this is done, we have a set of windows. Below is the same trajectory with 
 
 Finally, we loop through each window. For each point `n`, we calculate a vector of proximity costs `P`<sub>`n,k`</sub> for the remaining points, where for each point `k`, the proximity cost is:
 
+<div align="center">
 P<sub>n,k</sub> = W<sub>RA</sub> | RA<sub>n</sub> - RA<sub>k</sub> | + W<sub>dec</sub> | dec<sub>n</sub> - dec<sub>k</sub> |
+</div>
 
 where `W`<sub>`RA`</sub> and `W`<sub>`dec`</sub> are tunable weighing factors for right ascension and declination respectively. We take the point with the smallest proximity cost as the next point in the trajectory, and repeat the process until we have traversed the entire window, and then until we have finished with all the windows.
 
@@ -198,4 +200,4 @@ The resulting optimized trajectory is shown below.
     <img src='images/sky-surv-opt-window.png'>
 </div>
 
-This step in the optimization tends to reduce the mean elevation (though in the example above, this did not happen), but also reduces the declination oscillation frequency. For our purposes, this tradeoff is worth it.
+This step in the optimization tends to reduce the mean elevation (though in the example above, this did not happen), but also reduces the declination oscillation frequency.
