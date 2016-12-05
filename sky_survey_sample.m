@@ -1,11 +1,11 @@
-% Test script. Generates an arbitrary sky survey
+% Sample script. Generates an arbitrary sky survey
 
 clear
 clc
 
 % Physical parameters
-el_min = 50;
-t_test = 4 * 60;
+el_min = 40;
+t_test = 5 * 60;
 fov = 7.5;
 lat = 23;
 lon = -79;

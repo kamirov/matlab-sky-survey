@@ -3,6 +3,10 @@ Given a set of test and equipment parameters, this generates a sky survey - an o
 
 A trajectory is a set of timestamped coordinates. In the equatorial coordinate system, this is a set of 1×3 vectors of the form: (time, right ascension, declination). Given multiple points of interest, we can generate different trajectories to pass through them depending on what we want to prioritize.
 
+## Usage
+
+Launch `sky_survey_sample.m` to generate a sky survey using some sample parameters. Look at the function comments in `sky_survey.m` for more details. I've tried to keep the usage straight-forward, but send me a message if you've any questions.
+
 ## Overview
 
 Here’s a high-level view of the function:
